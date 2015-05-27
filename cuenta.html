@@ -424,6 +424,8 @@ saldo:
                 <form method="post" action="inserta recarga.html" name="form1" id="form1">
 <input type="text" name="comprobante" placeholder="folio" data-theme="b" data-inline="true" data-mini="true"  value="IMDM-22005057-6">
 <input type="text" name="total" placeholder="total" data-theme="b" data-inline="true" data-mini="true"  value="$100.00">
+<p>tarjeta de credito</p>
+<input type="text" name="no tarjeta" placeholder="tarjeta" data-theme="b" data-inline="true" data-mini="true"  value="3456-1234-7890-0987">
 <input type="text" name="rfc" placeholder="RFC" data-theme="b" data-inline="true" data-mini="true"  value="CACD720320KK3">
 <input type="text" name="Razon Social" placeholder="Razon Social" data-theme="b" data-inline="true" data-mini="true"  value="DAVID RICARDO CARRERA CHAVEZ">
 <input type="text" name="calle" placeholder="Calle" data-theme="b" data-inline="true" data-mini="true"  value="16 DE SEPTIEMBRE">	
@@ -467,7 +469,7 @@ saldo:
 				<p>cuanto vas a recargar:</p>
                 
                 <div data-role="content">
-                <form method="post" action="verificarecarga.html" name="form1" id="form1">
+                <form method="post" action="#tarjetarecarga" name="form1" id="form1">
 <label type="text" name="comprobante" placeholder="folio" data-theme="b" data-inline="true" data-mini="true"  value="IMDM-22005057-6">
 <input type="text" name="total" placeholder="total" data-theme="b" data-inline="true" data-mini="true">	           
     <div data-role="collapsible">
@@ -484,7 +486,7 @@ saldo:
 </div>
                 <!--<input type="submit" name="guardar" value="Guardar" onmouseUp="alert('Tus contactos han sido guadados')" >-->
 <div data-role="fieldcontain">
-    <a href="#verificarecarga" data-role="button">recargar</a>
+    <a href="#tarjetarecarga" data-role="button">recargar</a>
 </div>
 </div>
                <!-- <p><a href="#page" data-role="button">Guardar</a></p>-->
@@ -492,6 +494,47 @@ saldo:
 	</div>
 </div>
 
+
+ <!-- tarjeta recarga-->
+
+<div data-role="page" id="tarjetarecarga" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
+<div data-role="header" data-position="fixed" data-theme="b"> <a href="#" data-rel="back">Regresar</a><H2>CAPUFE-IAVE</H2>  </div>
+<br><br><br>
+	<div data-role="content" data-theme="b">	
+		<div data-role="content" data-theme="b">
+       <font face="Century Gothic" size="+3">Recarga IAVE</font>
+				<p>datos de tarjeta de pago:</p>
+                
+                <div data-role="content">
+                <form method="post" action="verificarecarga.html" name="form1" id="form1">
+<label type="text" name="no tarjeta" placeholder="tarjeta no" data-theme="b" data-inline="true" data-mini="true"  value="IMDM-22005057-6">
+<input type="text" name="total" placeholder="total" data-theme="b" data-inline="true" data-mini="true" value="$ 100">
+	<br>
+    <input type="text" name="notarjeta" placeholder="No de Tarjeta" data-theme="b" data-inline="true" data-mini="true">    
+     <input type="date" name="fechavencimiento" placeholder="fecha vencimiento" data-theme="b" data-inline="true" data-mini="true">  
+     <input type="text" name="codigover" placeholder="No verificacion" data-theme="b" data-inline="true" data-mini="true"> 
+     Recuerde que esta al final de la tarjeta   
+    <div data-role="collapsible">
+    <p>1. Ingrese un nombre de usuario (en caso de que ya no este disponible ingrese uno diferente)
+    </p>
+        <p>2. Ingrese una contraseña que debe tener como mínimo 8 caracteres (puede ingresar números y letras mayúsculas o minúsculas).
+    </p>
+    <p>3. Este campo debe coincidir con el campo anterior</p>
+    <p>4. El correo electrónico debe tener formato correcto(sin espacios en blancos y minúsculas)</p>
+    <p>5. Ningún campo debe estar vacío.</p>
+    <p>UNA VEZ LLENOS LOS 4 CAMPOS, DE CLICK EN EL BOTON<BR> 
+“Insertar Nuevo”</p></form>
+    <p><h3>Terminos y condiciones</h3></p>
+</div>
+                <!--<input type="submit" name="guardar" value="Guardar" onmouseUp="alert('Tus contactos han sido guadados')" >-->
+<div data-role="fieldcontain">
+    <a href="#verificarecarga" data-role="button">aceptar</a>
+</div>
+</div>
+               <!-- <p><a href="#page" data-role="button">Guardar</a></p>-->
+		</div>
+	</div>
+</div>
 
  <!--nueva recarga-->
 
@@ -525,7 +568,7 @@ saldo:
 </div>
                 <!--<input type="submit" name="guardar" value="Guardar" onmouseUp="alert('Tus contactos han sido guadados')" >-->
 <div data-role="fieldcontain">
-    <a href="#finalizacomprobante" data-role="button">recargar</a>
+    <a href="#verificarecarga" data-role="button">recargar</a>
 </div>
 </div>
                <!-- <p><a href="#page" data-role="button">Guardar</a></p>-->
@@ -536,7 +579,7 @@ saldo:
  <!-- finalizar Comprobante-->
 
 <div data-role="page" id="finalizacomprobante" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
-<div data-role="header" data-position="fixed" data-theme="b"> <a href="markers.php" data-rel="external">Salir</a><H2>CAPUFE-IAVE</H2>  </div>
+<div data-role="header" data-position="fixed" data-theme="b"> <a href="markers.html" data-rel="external">Salir</a><H2>CAPUFE-IAVE</H2>  </div>
 <br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
