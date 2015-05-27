@@ -1,0 +1,782 @@
+<!DOCTYPE html> 
+
+
+
+<html>
+
+
+
+<head>
+
+ <link href="favicon.ico" rel="icon" type="image/x-icon" />
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Capufe-Factura</title>
+
+
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+
+<script type="text/javascript" src="scripts/custom-form-elements.js"></script>
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css' />
+
+<link href="jquery.mobile-1.3.2.min.css" rel="stylesheet" type="text/css"/>
+
+<script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+
+<script src="jquery.mobile-1.3.2.min.js" type="text/javascript"></script>
+
+<script src="js/phonegap-1.1.0.js"></script>
+
+<link href="styles.css" type="text/css" rel="stylesheet" />
+
+	<link href="photoswipe.css" type="text/css" rel="stylesheet" />
+
+	<script type="text/javascript" src="lib/klass.min.js"></script>
+
+	<script type="text/javascript" src="code.photoswipe-3.0.5.min.js"></script>	
+
+	<script type="text/javascript">
+
+
+
+		(function(window, PhotoSwipe){
+
+
+
+			document.addEventListener('DOMContentLoaded', function(){
+
+				var
+
+					options = {},
+
+
+
+					instance = PhotoSwipe.attach( window.document.querySelectorAll('#pageDM1 a'), options );
+
+			}, false);
+
+		}(window, window.Code.PhotoSwipe));
+
+	</script>
+
+<style>
+
+
+
+.map iframe {
+
+
+
+	width: 100%;
+
+	height: 393px;
+
+	border: none;
+
+	margin-top: 0;
+
+	margin-bottom: 0;
+
+	padding-bottom: 0;
+
+}
+
+
+
+</style>
+
+
+
+	<style>	
+
+
+
+	* { margin: 0; padding: 0; }
+
+	.panel-content { 
+
+    padding:15px; 
+
+  }
+
+	#mapa { position: absolute; background: transparent; height: 100%; width: 100%; top: 0; left: 0; right: 0; bottom: 0; }
+
+	#Ubicacion { position: absolute; background: transparent; height: 100%; width: 100%; top: 0; left: 0; right: 0; bottom: 0; }
+
+.nav-search .ui-btn-up-a {
+
+    background-image:none;
+
+	background-color:#F2AD3A;
+
+}
+
+.nav-search .ui-btn-inner {
+
+    border-top: 1px solid #888;
+
+    border-color: rgba(255, 255, 255, .1);
+
+}
+
+.nav-search .ui-btn.ui-first-child {
+
+    border-top-width: 0;
+
+    background: #111;
+
+}
+
+
+
+.userform {
+
+    padding: .8em 1.2em;
+
+}
+
+
+
+.userform h2 {
+
+    color: #555;
+
+    margin: 0.3em 0 .8em 0;
+
+    padding-bottom: .5em;
+
+    border-bottom: 1px solid rgba(0,0,0,.1);
+
+}
+
+
+
+.userform label {
+
+    display: block;
+
+    margin-top: 1.2em;
+
+}
+
+
+
+.switch .ui-slider-switch {
+
+    width: 6.5em !important;
+
+}
+
+
+
+.ui-grid-a {
+
+    margin-top: 1em;
+
+    padding-top: .8em;
+
+    margin-top: 1.4em;
+
+    border-top: 1px solid rgba(0,0,0,.1);
+
+}
+
+	</style>
+
+<style>
+
+	IMG.displayed {
+
+	display: block;
+
+	margin-left: auto;
+
+	margin-right: auto }
+
+
+
+	.input{
+
+		height:25px;
+
+		width:25px;
+
+	}
+
+</style>
+
+
+
+    <style>
+
+#bg {
+
+  position: fixed;
+
+  z-index: -1;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+}
+
+#bg2 {
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+}
+
+#li_1 label.choice { display:inline; position:relative; margin-left: 0.2em; _top:0.2em; }  
+
+#li_1 input.radio { display: inline; margin-left: 0.5em; }
+
+    </style>
+
+    <style>
+
+  .ui-page {background: transparent;}
+
+  	#mapa { position: absolute; background: transparent; height: 100%; width: 100%; top: 0; left: 0; right: 0; bottom: 0; }
+
+
+
+    </style>
+
+
+
+</head> 
+
+
+
+<body alink="#0000FF"> 
+
+
+
+<div data-role="page" id="page">
+
+	<div data-role="header" align="center" data-position="fixed">
+
+   <img src="headerinicio.png" width="100%" height="68">
+
+	</div>
+
+	<div data-role="content">
+
+	<!--</div>
+
+   	<div data-role="content">-->
+    <div align="center"><a href="loginregister.php" rel="external" data-role="button" data-mini="true" data-inline="true" data-theme="d">ENTRAR</a></div>
+
+<!--<a href="markers.html" rel="external" ><img src="icon6.png" width="65" height="87" img style="float:left;" > </a>-->
+
+	<!--</div>
+
+   	<div data-role="content">-->
+
+
+	<!--</div>-->
+
+
+
+    
+
+    </div>
+
+     <div>
+  
+     <img id="bg" src="imagenfondo2.jpg" alt="Fondo" />
+
+
+
+</div>
+  
+	<div data-role="footer" data-position="fixed">
+                                              
+         	 <img id="bg2" src="footerlogo.png" height="68" />
+  
+	</div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Buscar-->
+
+
+
+<div data-role="page" id="menuB1" data-theme="b">
+
+
+
+	<div data-role="header" align="center" data-position="fixed">
+
+
+
+    <img src="headerinicio.png" width="100%" height="68">
+
+
+
+	</div>
+
+
+
+    
+
+
+
+	<div  id="capa" data-role="content">	
+
+
+
+    <table width="100%" border="0">
+
+
+
+      <tr>
+
+
+
+        <td><div align="center"><a data-rel="back" data-role="button" data-mini="true" data-inline="true" data-theme="d"><font color="red">Regresar</a></font></div></td>
+
+
+
+        <td><div align="center"><a href="#page" data-role="button" data-mini="true" data-inline="true" data-theme="b">Inicio</a></div></td>
+
+
+
+      </tr>
+
+
+
+    </table>
+
+
+
+    
+
+
+
+    <div data-role="content">	<!--data-filter="true" data-filter-reveal="true" data-filter-placeholder="Buscar por nombre"-->
+
+
+
+		<ul data-role="listview" data-theme="d">
+
+
+
+    <li><a href="#page5">Americana</a></li>
+
+
+
+    <li><a href="#page6">Arabe</a></li>
+
+
+
+    <li><a href="#page7">Argentina</a></li>
+
+
+
+    <li><a href="#page8">Carnes</a></li>
+
+
+
+    <li><a href="#page9">China</a></li>
+
+
+
+    <li><a href="#page10">De autor</a></li>
+
+
+
+    <li><a href="#page11">Española</a></li>
+
+
+
+    <li><a href="#page12">Francesa </a></li>
+
+
+
+    <li><a href="#page13">Hindí</a></li>
+
+
+
+    <li><a href="#page14">Internacional</a></li>
+
+
+
+    <li><a href="#page15">Italiana</a></li> 
+
+
+
+    <li><a href="#page16">Japonesa</a></li> 
+
+
+
+    <li><a href="#page17">Libanesa</a></li> 
+
+
+
+ <li><a href="#page18">Mediterránea</a></li> 
+
+
+
+ <li><a href="#page19">Mexicana</a></li> 
+
+
+
+ <li><a href="#page20">Peruana</a></li> 
+
+
+
+ <li><a href="#page21">Pescados y mariscos</a></li> 
+
+
+
+ <li><a href="#page22">Polaca</a></li> 
+
+
+
+ <li><a href="#page23">Portuguesa</a></li> 
+
+
+
+ <li><a href="#page24">Vasca</a></li> 
+
+
+
+		</ul>
+
+
+
+	</div>
+
+
+
+   
+
+
+
+     </div>
+
+
+
+
+
+
+
+	<div data-role="footer" data-position="fixed">
+
+
+
+         	 <img id="bg2" src="footerlogo.png" height="68" />
+
+
+
+	</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!--Voy a estar-->
+
+
+
+<div data-role="page" id="menu2">
+
+
+
+	<div data-role="header" align="center" data-position="fixed"> <a href="#page" >Regresar</a>
+
+
+
+   <img src="headerinicio.png" width="100%" height="68">
+
+
+
+	</div>
+
+
+
+    
+
+
+
+<div data-role="content">
+
+
+
+	
+
+
+
+
+
+
+
+  	<section id="Ubicacion" >	</section>
+
+
+
+</div>
+
+
+
+
+
+
+
+	<div data-role="footer" data-position="fixed">
+
+
+
+      <div data-role="footer" data-position="fixed">
+
+
+
+
+
+
+
+         	 <img id="bg2" src="footerlogo.png" height="68" />
+
+
+
+
+
+
+
+	</div>
+
+
+
+        <h4>Voy a estar</h4>
+
+
+
+	</div>
+
+
+
+</div>
+
+
+
+<!--Voy a estar Resultado-->
+
+
+
+<div data-role="page" id="menuV">
+
+
+
+	<div data-role="header" align="center" data-position="fixed"> <a href="#page" >Regresar</a>
+
+
+
+   <img src="headerinicio.png" width="100%" height="68">
+
+
+
+	</div>
+
+
+
+    
+
+
+
+<div data-role="content">
+
+
+
+	
+
+
+
+    
+
+
+
+    <div id="map_canvas" style="width: 800px; height: 600px"></div>
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+</div>
+
+
+
+
+
+
+
+	<div>
+
+
+
+     <img id="bg" src="fondo4.jpg" alt="Fondo" />
+
+
+
+	</div>
+
+
+
+	<div data-role="footer" data-position="fixed">
+
+
+
+         	 <img id="bg2" src="footerlogo.png" height="68" />
+
+
+
+	</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div data-role="page" id="page129c">
+
+
+
+	<div data-role="header" align="center" data-position="fixed">
+
+
+
+	 <img src="headerinicio.png" width="100%" height="68">
+
+
+
+	</div>
+
+
+
+    <table width="100%" border="0">
+
+
+
+      <tr>
+
+
+
+        <td><div align="center"><a data-rel="back" data-role="button" data-mini="true" data-inline="true" data-theme="d"><font color="red">Regresar</a></font></div></td>
+
+
+
+        <td><div align="center"><a href="#menu" data-role="button" data-mini="true" data-inline="true" data-theme="b">Inicio</a></div></td>
+
+
+
+        <td><div align="center"><a href="mapas.html#mapa125" rel="external" data-role="button" data-mini="true" data-inline="true" data-theme="d"><font color="red">Como llegar</a></font></div></td>
+
+
+
+      </tr>
+
+
+
+    </table>
+
+
+
+	 <div data-role="content">	
+
+
+
+     <a href="#page129c">  <img src="Detalle3.png" width="40%"  class="displayed"> </a>
+
+
+
+	<br>• Almejas a la mantequilla.<br>• Teppanyaki King crab o foie gras.<br>• Espárragos con carne.<br>• Tempura helado; Gelatina de Midori.<br>
+
+
+
+     </div>   
+
+
+
+     <img class="displayed" src="rest/suntory.png" width="60%">
+
+
+
+	<div data-role="footer" align="center" data-position="fixed">
+
+
+
+    
+
+
+
+	  <div data-role="footer" data-position="fixed">
+
+
+
+	  <img id="bg2" src="footerlogo.png" height="78">
+
+
+
+     </div>
+
+
+
+	</div>
+
+
+
+</div>
+
+
+
+</body>
+
+</html>
