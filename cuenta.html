@@ -9,12 +9,12 @@
 		<title>Capufe-Factura</title>
 		<link rel="stylesheet" href="themes/panic.min.css" />
 		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
+		<link rel="stylesheet" href="lib/jquery.mobile.structure-1.3.2.min.css" />
         
 		
         
-		<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+		<script src="lib/jquery-1.11.2.min.js"></script>
+		<script src="lib/jquery.mobile-1.3.2.min.js"></script>
         <script type="text/javascript">
 
 /*		function iniciate() { 
@@ -27,7 +27,7 @@
     	}*/
 		function pass(){
 		 var myForm = document.getElementById('user').value;
-		window.location.href = '../capufe/facturacion.php?user='+myForm;
+		window.location.href = '../capufe/facturacion.html?user='+myForm;
 		}
 		
 		</script>       
@@ -56,7 +56,7 @@
 
 <div data-role="page" id="editarcta" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
 <div data-role="header" data-position="fixed" data-theme="b"> <a href="#" data-rel="back">Regresar</a><H2>CAPUFE-IAVE</H2>  </div>
-<br><br><br><br><br><br>
+<br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
        <font face="Century Gothic" size="+3">Edicion de cuenta</font>
@@ -126,7 +126,7 @@
 
 <div data-role="page" id="nvorfc" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
 <div data-role="header" data-position="fixed" data-theme="b"> <a href="#" data-rel="back">Regresar</a><H2>CAPUFE-FACTURA</H2>  </div>
-<br><br><br><br><br><br>
+<br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
        <font face="Century Gothic" size="+3">Crear Nuevo RFC</font>
@@ -171,7 +171,7 @@
 
 <div data-role="page" id="rfc" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
 <div data-role="header" data-position="fixed" data-theme="b"> <a href="#" data-rel="back">Regresar</a><H2>CAPUFE-FACTURA</H2>  </div>
-<br><br><br><br><br><br>
+<br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
        <font face="Century Gothic" size="+3">Modificacion RFC</font>
@@ -215,7 +215,7 @@
 
 <div data-role="page" id="iave" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
 <div data-role="header" data-position="fixed" data-theme="b"> <a href="#" data-rel="back">Regresar</a><H2>CAPUFE-IAVE</H2>  </div>
-<br><br><br><br><br><br>
+<br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
        <font face="Century Gothic" size="+3">IAVE</font>
@@ -259,7 +259,7 @@ saldo:
 
 <div data-role="page" id="nvaiave" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
 <div data-role="header" data-position="fixed" data-theme="b"> <a href="#" data-rel="back">Regresar</a><H2>CAPUFE-IAVE</H2>  </div>
-<br><br><br><br><br><br>
+<br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
        <font face="Century Gothic" size="+3">NUEVA IAVE</font>
@@ -302,7 +302,7 @@ saldo:
 
 <div data-role="page" id="contacto" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
 <div data-role="header" data-position="fixed" data-theme="b"> <a href="#" data-rel="back">Regresar</a><H2>CAPUFE-IAVE</H2>  </div>
-<br><br><br><br><br><br>
+<br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
        <font face="Century Gothic" size="+3">CONTACTO</font>
@@ -325,7 +325,7 @@ saldo:
 
 <div data-role="page" id="comprobante" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
 <div data-role="header" data-position="fixed" data-theme="b"> <a href="#" data-rel="back">Regresar</a><H2>CAPUFE-FACTURA</H2>  </div>
-<br><br><br><br><br><br>
+<br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
        <font face="Century Gothic" size="+3">Detalles comprobante</font>
@@ -372,7 +372,7 @@ saldo:
 
 <div data-role="page" id="altacomprobante" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
 <div data-role="header" data-position="fixed" data-theme="b"> <a href="#" data-rel="back">Regresar</a><H2>CAPUFE-FACTURA</H2>  </div>
-<br><br><br><br><br><br>
+<br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
        <font face="Century Gothic" size="+3">Alta Comprobante</font>
@@ -463,7 +463,7 @@ saldo:
 
 <div data-role="page" id="altarecarga" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
 <div data-role="header" data-position="fixed" data-theme="b"> <a href="#" data-rel="back">Regresar</a><H2>CAPUFE-IAVE</H2>  </div>
-<br><br><br><br><br><br>
+<br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
        <font face="Century Gothic" size="+3">Recarga IAVE</font>
@@ -500,7 +500,7 @@ saldo:
 
 <div data-role="page" id="nvarecarga" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
 <div data-role="header" data-position="fixed" data-theme="b"> <a href="#" data-rel="back">Regresar</a><H2>CAPUFE-IAVE</H2>  </div>
-<br><br><br><br><br><br>
+<br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
        <font face="Century Gothic" size="+3">Recarga IAVE</font>
@@ -540,7 +540,7 @@ saldo:
 
 <div data-role="page" id="finalizacomprobante" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
 <div data-role="header" data-position="fixed" data-theme="b"> <a href="markers.php" data-rel="external">Salir</a><H2>CAPUFE-IAVE</H2>  </div>
-<br><br><br><br><br><br>
+<br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
        <font face="Century Gothic" size="+3">Finalizacion RECARGA</font>
@@ -567,7 +567,7 @@ saldo:
 
 <div data-role="page" id="descargarxml" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
 <div data-role="header" data-position="fixed" data-theme="b"> <a href="markers.html" data-rel="external">Salir</a><H2>CAPUFE-FACTURA</H2>  </div>
-<br><br><br><br><br><br>
+<br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
        <font face="Century Gothic" size="+3">Finalizacion Comprobante</font>
@@ -591,7 +591,7 @@ saldo:
 
 <div data-role="page" id="descargarpdf" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
 <div data-role="header" data-position="fixed" data-theme="b"> <a href="markers.html" data-rel="external">Salir</a><H2>CAPUFE-FACTURA</H2>  </div>
-<br><br><br><br><br><br>
+<br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
        <font face="Century Gothic" size="+3">Finalizacion Comprobante</font>
@@ -616,7 +616,7 @@ saldo:
 
 <div data-role="page" id="enviarcorreo" style="background-image:url(fondo1.jpg);background-repeat:no-repeat; background-size:100%;" align="center" >
 <div data-role="header" data-position="fixed" data-theme="b"> <a href="markers.html" data-rel="external">Salir</a><H2>CAPUFE-IAVE</H2>  </div>
-<br><br><br><br><br><br>
+<br><br><br>
 	<div data-role="content" data-theme="b">	
 		<div data-role="content" data-theme="b">
        <font face="Century Gothic" size="+3">Envio Comprobante</font>
